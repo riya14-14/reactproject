@@ -31,7 +31,6 @@ const Cards = () => {
 
 	const chanegData = (e) => {
 		let getchangedata = e.toLowerCase();
-		console.log("-ff-", getchangedata);
 		if (getchangedata == "") {
 			setCopyData(data);
 		} else {
@@ -45,7 +44,6 @@ const Cards = () => {
 
 	const send = (e) => {
 		dispatch(ADD(e));
-		// k
 	};
 
 	useEffect(() => {
@@ -95,7 +93,7 @@ const Cards = () => {
 					</Carousel.Caption>
 				</Carousel.Item>
 			</Carousel>
-			<div className="  row mt-2">
+			<div className="row mt-2">
 				<Form className="d-flex justify-content-center align-items-center mt-3">
 					<Form.Group className=" mx-2 col-lg-4" controlId="formBasicEmail">
 						<Form.Control type="text" onChange={(e) => chanegData(e.target.value)} placeholder="Search Restaurant" />

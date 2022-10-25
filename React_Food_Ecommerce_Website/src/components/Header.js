@@ -11,11 +11,12 @@ import { DLT } from "../redux/actions/action";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import logo from "./assets/logo.png"
+import Form from "react-bootstrap/Form";
 
 const Header = () => {
 	const getdata = useSelector((state) => state.cartreducer.carts);
-	console.log(getdata);
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [price, setPrice] = useState(0);
 
@@ -54,20 +55,39 @@ const Header = () => {
 
 	return (
 		<>
-			<Navbar bg="dark" variant="dark" style={{ height: "60px" }}>
+			<Navbar bg="bg-secondary" variant="dark" style={{ height: "60px" ,backgroundColor : "#C8AD7F"}}>
 				<Container>
-					<NavLink to="/" className="text-decoration-none text-light mx-3" href="#home" style={{ fontSize: 25 }}>
-						Tasty Treat
-					</NavLink>
+				<NavLink to="/" >
+                  <img src={logo} style={{ width: "8rem", height: "8rem",marginLeft :"0rem" }} alt="" />
+				</NavLink>
 					<Nav className="me-auto">
-						<NavLink to="/" className="text-decoration-none text-light mx-3" style={{ fontSize: 15 }}>
+						<NavLink to="/" className="text-decoration-none text-dark mx-3" style={{ fontSize: 15,fontWeight : "bold", }}>
 							Home
 						</NavLink>
-						<NavLink to="/cart" className="text-decoration-none text-light" style={{ fontSize: 15 }}>
-							Contacts
+						<NavLink to="/contactus" className="text-decoration-none text-dark
+						" style={{ fontSize: 15,fontWeight : "bold" }}>
+							Contact Us
 						</NavLink>
 					</Nav>
 
+					<div className="search-wrapper">
+                        <label htmlFor="search-form">
+                            <input
+                                type="search"
+                                name="search-form"
+                                id="search-form"
+                                className="search-input"
+                                placeholder="Search for..."
+                              //  value={q}
+                                /*
+                                // set the value of our useState q
+                                //  anytime the user types in the search box
+                                */
+                              //  onChange={(e) => setQ(e.target.value)}
+                            />
+                            <span className="sr-only">Search countries here</span>
+                        </label>
+                    </div>
 					<Badge
 						badgeContent={getdata.length}
 						color="primary"
@@ -77,10 +97,10 @@ const Header = () => {
 						aria-expanded={open ? "true" : undefined}
 						onClick={handleClick}
 					>
-						<i className="fa-solid fa-cart-shopping text-light" style={{ fontSize: 25, cursor: "pointer" }}></i>
+						<i className="fa-solid fa-cart-shopping text-dark" style={{ fontSize: 25, cursor: "pointer" }}></i>
 					</Badge>
 					<div className="mx-3">
-						<PersonOutlineIcon style={{ color: "white", fontSize: 28 }} onClick={() => ready()}></PersonOutlineIcon>
+						<PersonOutlineIcon style={{ color: "black", fontSize: 28 , cursor: "pointer"}} onClick={() => ready()}></PersonOutlineIcon>
 					</div>
 				</Container>
 				<Menu

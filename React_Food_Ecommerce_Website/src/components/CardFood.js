@@ -14,7 +14,6 @@ const CardFood = ({ data }) => {
 
 	const send = (e) => {
 		dispatch(ADD(e));
-		// k
 	};
 
 	return (

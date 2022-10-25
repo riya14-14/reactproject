@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Carousel from "react-bootstrap/Carousel";
-import logo from "./assets/Food-Logo.jpg";
+import logo from "./assets/pngwing.com.png";
 
 const Login = () => {
 	const initialValues = { email: "", password: "" };
@@ -55,7 +55,7 @@ const Login = () => {
 								className="d-block w-100"
 								src="https://b.zmtcdn.com/data/pictures/9/18857339/8f53919f1175c08cf0f0371b73704f9b_o2_featured_v2.jpg?output-format=webp"
 								alt="First slide"
-								style={{ height: "700px" }}
+								style={{ height: "800px" }}
 							/>
 							<Carousel.Caption>
 								<h3>First slide label</h3>
@@ -67,7 +67,7 @@ const Login = () => {
 								className="d-block w-100"
 								src="https://b.zmtcdn.com/data/pictures/chains/5/19295245/089cbcf1d3307542c72f77272556b28b_o2_featured_v2.jpg?output-format=webp"
 								alt="Second slide"
-								style={{ height: "700px" }}
+								style={{ height: "800px" }}
 							/>
 
 							<Carousel.Caption>
@@ -80,7 +80,7 @@ const Login = () => {
 								className="d-block w-100"
 								src="https://b.zmtcdn.com/data/pictures/chains/5/110225/3978e28854b7496dbef9496546734811_o2_featured_v2.jpg"
 								alt="Third slide"
-								style={{ height: "700px" }}
+								style={{ height: "800px" }}
 							/>
 
 							<Carousel.Caption>
@@ -92,16 +92,30 @@ const Login = () => {
 				</div>
 				<div className="col-sm-6">
 					<div className="login-form-1 ">
-						<img src={logo} className="logo" alt="Tasty Treat" style={{ height: "8rem" }} />
+						<img src={logo} className="logo" alt="Tasty Treat" style={{ height: "10rem" }} />
 						<form className="form" onSubmit={handleSubmit}>
 							<div className="input-group">
 								<label htmlFor="email">Email</label>
-								<input type="email" name="email" placeholder="nome@email.com.br" value={formValues.email} onChange={handleChange} />
+								<input
+									className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+									type="email"
+									name="email"
+									placeholder="nome@email.com.br"
+									value={formValues.email}
+									onChange={handleChange}
+								/>
 							</div>
 							<p style={{ color: "red" }}>{formErrors.email}</p>
 							<div className="input-group">
 								<label htmlFor="password">Password</label>
-								<input type="password" name="password" placeholder="***********" value={formValues.password} onChange={handleChange} />
+								<input
+									className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+									type="password"
+									name="password"
+									placeholder="***********"
+									value={formValues.password}
+									onChange={handleChange}
+								/>
 							</div>
 							<p style={{ color: "red" }}>{formErrors.password}</p>
 							<button className="primary">SUBMIT</button>
